@@ -21,3 +21,6 @@ func _ready():
 		newApple.position = Vector2((randi() % int(width / 32)) * 32 + 16, (randi() % int(height / 32)) * 32 + 16)
 		
 		add_child(newApple)
+
+func you_are_die():
+	get_tree().reload_current_scene()
