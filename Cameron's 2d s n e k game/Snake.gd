@@ -44,6 +44,11 @@ func move_snake():
 		var tail = get_child(i)
 		tail.position = tail.position + (tail.cur_dir * tail.SPEED)
 		tail.timeout()
+	head_pos = get_node("Head").position
+	if (head_pos.x < -32 or head_pos.x > get_viewport_rect().size.x - 128):
+		get_parent().you_are_die()
+	if (head_pos.y < -32 or head_pos.y > get_viewport_rect().size.y - 128):
+		get_parent().you_are_die()
 
 func _on_MoveTimer_timeout():
 	move_snake()
