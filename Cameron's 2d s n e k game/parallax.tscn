@@ -1,10 +1,75 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://parallax-1.png" type="Texture" id=1]
-[ext_resource path="res://parallax.gd" type="Script" id=2]
+[ext_resource path="res://parallax-0.png" type="Texture" id=1]
+[ext_resource path="res://parallax-1.png" type="Texture" id=2]
+[ext_resource path="res://parallax-slow.gd" type="Script" id=3]
+[ext_resource path="res://parallax-2.png" type="Texture" id=4]
+[ext_resource path="res://parallax-medium.gd" type="Script" id=5]
+[ext_resource path="res://parallax-3.png" type="Texture" id=6]
+[ext_resource path="res://parallax-fast.gd" type="Script" id=7]
+[ext_resource path="res://parallax-4.png" type="Texture" id=8]
+[ext_resource path="res://parallax-extreme.gd" type="Script" id=9]
 
-[node name="parallax" type="Sprite"]
+[node name="parallax" type="Node2D"]
+
+[node name="01-sky" type="Sprite" parent="."]
 position = Vector2( 512, 512 )
 scale = Vector2( 2, 2 )
+z_index = -10
 texture = ExtResource( 1 )
-script = ExtResource( 2 )
+
+[node name="11-clouds" type="Sprite" parent="."]
+position = Vector2( 512, 512 )
+scale = Vector2( 2, 2 )
+z_index = -9
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="12-clouds" type="Sprite" parent="."]
+position = Vector2( -512, 512 )
+scale = Vector2( 2, 2 )
+z_index = -9
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="21-mount1" type="Sprite" parent="."]
+position = Vector2( 512, 512 )
+scale = Vector2( 2, 2 )
+z_index = -8
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="22-mount1" type="Sprite" parent="."]
+position = Vector2( -512, 512 )
+scale = Vector2( 2, 2 )
+z_index = -8
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="31-mount2" type="Sprite" parent="."]
+position = Vector2( 512, 512 )
+scale = Vector2( 2, 2 )
+z_index = -7
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="32-mount2" type="Sprite" parent="."]
+position = Vector2( -512, 512 )
+scale = Vector2( 2, 2 )
+z_index = -7
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="41-pillars" type="Sprite" parent="."]
+position = Vector2( 512, 512 )
+scale = Vector2( 2, 2 )
+z_index = 15
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+
+[node name="42-pillars" type="Sprite" parent="."]
+position = Vector2( -512, 512 )
+scale = Vector2( 2, 2 )
+z_index = 15
+texture = ExtResource( 8 )
+script = ExtResource( 9 )

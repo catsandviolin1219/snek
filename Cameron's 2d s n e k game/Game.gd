@@ -23,4 +23,14 @@ func _ready():
 		add_child(newApple)
 
 func you_are_die():
-	get_tree().reload_current_scene()
+	var snake_position = get_node("Snake/Head").position
+	print(snake_position)
+	get_node("Boom").position = snake_position + Vector2(80, 112)
+	get_node("Boom").visible = true
+	print(get_node("Boom").visible)
+	get_node("Snake").queue_free()
+	get_node("Death Screen").visible = true
+
+func _process(delta):
+	if (Input.is_action_just_pressed("restart")):
+		get_tree().reload_current_scene()

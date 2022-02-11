@@ -10,7 +10,6 @@ func add_direction(head_pos, dir):
 	directions_turned.append(dir)
 
 func timeout():
-	print(turn_locations)
 	if (turn_locations.size() > 0):
 		if (position == turn_locations[0]):
 			cur_dir = directions_turned[0]
